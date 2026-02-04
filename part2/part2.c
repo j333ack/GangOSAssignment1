@@ -29,11 +29,11 @@ int main() {
         }
 
         else if (strcmp(command, "type") == 0) {
-           
+          concat(arg1,arg2);
         }
 
         else if (strcmp(command, "del") == 0) {
-            
+           del(arg1); 
         }
 
         else if (strcmp(command, "ren") == 0) {

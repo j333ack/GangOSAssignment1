@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <errno.h>
 #define MAX 100
 
 int main() {
@@ -37,7 +38,13 @@ int main() {
         }
 
         else if (strcmp(command, "ren") == 0) {
-           
+           if (rename(arg1, arg2) == 0)
+                printf("File renamed");
+            else
+            {
+                perror("File rename failure");
+                exit(EXIT_FAILURE);
+            }
         }
 
         else if (strcmp(command, "copy") == 0) {

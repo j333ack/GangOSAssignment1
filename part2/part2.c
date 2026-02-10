@@ -27,10 +27,22 @@ int main() {
             	}
         	}
 
-        else if (strcmp(command, "dir") == 0) {
-            system("ls");
-        }
+       else if (strcmp(command, "dir") == 0) {
+    		DIR *d;
+    		struct dirent *entry;
 
+    		d = opendir(".");
+    		if (d == NULL) {
+        		perror("opendir");
+        		continue;
+    		}
+
+    		while ((entry = readdir(d)) != NULL) {
+        		printf("%s\n", entry->d_name);
+    		}
+
+    		closedir(d);
+		}
 //        else if (strcmp(command, "type") == 0) {
 //          concat(arg1,arg2);
 //        }

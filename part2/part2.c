@@ -7,24 +7,25 @@
 #define MAX 100
 
 int main() {
-    char input[MAX];
-    char command[MAX], arg1[MAX], arg2[MAX];
-    printf("DOS command interpreter\n");
+	char input[MAX];
+	char command[MAX], arg1[MAX], arg2[MAX];
+	printf("DOS command interpreter\n");
+	printf("Type Ctrl-C to exit\n");
 
-    while (1) {
-        printf("type command: ");
-        fgets(input, MAX, stdin);
+	while (1) {
+        	printf("Type command: ");
+        	fgets(input, MAX, stdin);
 
-        command[0] = arg1[0] = arg2[0] = '\0';
-        sscanf(input, "%s %s %s", command, arg1, arg2);
+        	command[0] = arg1[0] = arg2[0] = '\0';
+        	sscanf(input, "%s %s %s", command, arg1, arg2);
 
-	if (strcmp(command, "cd") == 0) {
-            if (strlen(arg1) == 0) {
-                printf("error too few arguments\n");
-            } else {
-                chdir(arg1);
-            }
-        }
+		if (strcmp(command, "cd") == 0) {
+            	if (strlen(arg1) == 0) {
+                	printf("Error: too few arguments\n");
+            	} else {
+                	chdir(arg1);
+            	}
+        	}
 
         else if (strcmp(command, "dir") == 0) {
             system("ls");
@@ -66,7 +67,7 @@ int main() {
 			write(files[1], buffer, count);
         }
         else {
-            printf("unknown command\n");
+            printf("Unknown command\n");
         }
     }
     return 0;

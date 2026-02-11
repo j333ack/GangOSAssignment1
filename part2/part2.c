@@ -43,9 +43,9 @@ int main() {
 
     		closedir(d);
 		}
-//        else if (strcmp(command, "type") == 0) {
-//          concat(arg1,arg2);
-//        }
+        else if (strcmp(command, "type") == 0) {
+          concat(arg1,arg2);
+        }
 
 //        else if (strcmp(command, "del") == 0) {
 //           del(arg1); 

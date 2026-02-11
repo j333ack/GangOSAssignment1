@@ -33,19 +33,6 @@ public class Producer implements Runnable {
                         break;
 
                 }
-                //Uncomment for Producer filling array
-                //Thread.sleep(1200); 
-                //Uncomment for Consistent Production and Consumption
-                //Thread.sleep(300);
-
-                //Uncomment for Consumer emptying array
-                //Thread.sleep(1500);
-
-                //option 2: produce to full then sleep
-                // do {
-                //     insert(insertion);
-                // } while (arr.getCount() < arr.getBufferSize());
-                // Thread.sleep(10000);
             }
         } catch (InterruptedException e) {
             System.out.println("Producer interrupted");
@@ -58,3 +45,4 @@ public class Producer implements Runnable {
     }
 
 }
+

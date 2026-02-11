@@ -8,11 +8,13 @@ public class Main {
         //create array of integers, set to empty
         //int[] intArr = new int[BUFFER_SIZE]; //all set to 0
         BoundedBuffer buffer = new BoundedBuffer();
-
+        //Case current = Case.bufferFull;
+        //Case current = Case.bufferEmpty;
+        Case current = Case.inbetween;
         //create producer and consumer threads
         //each thread a reference to the intArr object
-        Thread producer = new Thread(new Producer(buffer), "Luigi");
-        Thread consumer = new Thread(new Consumer(buffer), "Mario");
+        Thread producer = new Thread(new Producer(buffer, current), "Luigi");
+        Thread consumer = new Thread(new Consumer(buffer, current), "Mario");
 
         //Thread producer = new Thread(new Producer(intArr));
         //Thread consumer = new Thread(new Consumer(intArr));

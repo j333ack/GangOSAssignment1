@@ -42,7 +42,8 @@ public class BoundedBuffer {
         item = buffer[out];
         out = (out + 1) % BUFFER_SIZE;
 
-        notifyAll();
+        if (count == 0){
+        notifyAll(); }
         return item;
     }
 

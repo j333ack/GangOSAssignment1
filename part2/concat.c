@@ -1,28 +1,38 @@
+#include "header.h"
 
-#MAX_LINE 2048
+void concat(char* arg1,char* arg2){
 
-char* concat(arg1, arg2){
+  if(arg1[0] == '\0' || arg2[0] == '\0'){
+    char *msg = "type requires two arguments";
+    printf("%s" ,msg);
+    return;
+
+  }
 
   FILE *fptr1 = fopen(arg1, "r");
 
-  char out[MAX_LINE];
+  char out[MAXLINE];
 
-  while(fgets(out, MAX_LINE, fptr1) != NULL){
+  while(fgets(out, MAXLINE, fptr1) != NULL){
 
-    printf("%s\n", out);
+    printf("%s", out);
 
   }
+
+  fclose(fptr1);
 
   FILE *fptr2 = fopen(arg2, "r");
 
-  while(fgets(out, MAX_LINE, fptr1) != NULL){
+  while(fgets(out, MAXLINE, fptr1) != NULL){
     
-  printf("%s\n", out);
+  printf("%s", out);
 
   }
 
+  fclose(fptr2);
 
-  return 0;
+
+  return;
 }
 
 

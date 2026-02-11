@@ -41,9 +41,10 @@ int main() {
           concat(arg1,arg2);
         }
 
-//        else if (strcmp(command, "del") == 0) {
-//           del(arg1); 
-//        }
+        else if (strcmp(command, "del") == 0) {
+           del(arg1, arg2); 
+        }
+
 	else if (strcmp(command, "ren") == 0) {
            if (rename(arg1, arg2) == 0)
                 printf("File renamed\n");

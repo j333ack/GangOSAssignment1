@@ -9,5 +9,6 @@
 #define MAXLINE 2048
 
 void concat(char *arg1, char *arg2);
+void del(char *arg1, char *arg2);
 
 

@@ -24,22 +24,6 @@ public class Consumer implements Runnable {
                         Thread.sleep(410);
 
                 }
-                //consumer starts asleep to ensure producer can put stuff in array before they start to consume
-
-                //consume an item from the buffer
-
-                //option 1: normal
-               // takeOut = takeOut();
-
-                //option 2: eat all then sleep
-            //     do {
-            //         takeOut = takeOut();
-            //     } while (arr.getCount() > 0);
-            //     //Uncomment for consisitent Production and Consumption
-            //    //Thread.sleep(1200);
-            //    //Uncomment for Producer filling array
-            //     Thread.sleep(300);
-
             }
         } catch (InterruptedException e) {
             System.out.println("Consumer thread interrupted");
@@ -55,3 +39,4 @@ public class Consumer implements Runnable {
     }
 
 }
+

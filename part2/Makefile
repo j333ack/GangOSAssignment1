@@ -2,6 +2,10 @@ CFLAGS=-Wall    -g
 
 clean:
 	rm    -f    part2
+	rm	-f	part2.o
+	rm	-f	concat.o
+	rm	-f	del.o
+
 
 part2: part2.o concat.o del.o
 	gcc -o part2 part2.o concat.o del.o
